@@ -90,7 +90,6 @@ def encounter(puck):
 
 
 def shot(puck):
-    print("Бросок по воротам!")
     if puck in redteam:
         shooter = redteam
         goalie = blueteam
@@ -101,12 +100,13 @@ def shot(puck):
         print("Синие в атаке! Красные защищаются!")
     shooter = shootingchance(shooter)
     defender = savechance(goalie)
+    print("Бросок по воротам!")
     if shooter > defender:
         print("ГООООООЛ!")
         puck = None
     else:
         print("Вратарь отражает бросок!")
-        puck = defender[0]
+        puck = goalie[0]
 
 puckdrop()
 #print("ENCOUNTER")
