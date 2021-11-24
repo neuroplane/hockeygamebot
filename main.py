@@ -77,9 +77,9 @@ def encounter(puck):
         print("Синие в атаке! Красные защищаются!")
     attack = attackchance(attacker)
     defence = defencechance(defender)
-    #while attack == defence:
-    #    attack = attackchance(attacker)
-    #    defence = defencechance(defender)
+    while attack == defence:
+        attack = attackchance(attacker)
+        defence = defencechance(defender)
     if attack > defence:
         puck = attacker[0]
     else:
@@ -103,15 +103,13 @@ def shot(puck):
     print("Бросок по воротам!")
     if shooter > defender:
         print("ГООООООЛ!")
+        time.sleep(3)
         puck = None
+        puckdrop()
     else:
         print("Вратарь отражает бросок!")
         puck = goalie[0]
+        encounter(puck)
+
 
 puckdrop()
-#print("ENCOUNTER")
-#attackchance(blueteam)
-#defencechance(redteam)
-#print("==========\nSHOOTING")
-#shootingchance(blueteam)
-#savechance(redteam)
